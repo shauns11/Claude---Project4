@@ -2,7 +2,7 @@
       name:  <unnamed>
        log:  C:\CLAUDE\Projects\Project4\output\dataset_creation.log
   log type:  text
- opened on:  27 Sep 2026, 17:00:09
+ opened on:  27 Sep 2026, 17:07:09
 
 . 
 . clear
@@ -82,8 +82,8 @@ Sampling weights: wt_int
 
 . keep id psu strata wt_int sex age income wealth
 
-. save "C:/CLAUDE/Projects/Project4/data/survey_data.dta", replace
-file C:/CLAUDE/Projects/Project4/data/survey_data.dta saved
+. save "data/survey_data.dta", replace
+file data/survey_data.dta saved
 
 . 
 . *display date and time.
@@ -93,7 +93,7 @@ file C:/CLAUDE/Projects/Project4/data/survey_data.dta saved
 
 . display _newline "Run `date' at `time'"
 
-Run 27 Sep 2026 at 17:00:09
+Run 27 Sep 2026 at 17:07:09
 
 . 
 . *close the log file.
@@ -101,5 +101,5 @@ Run 27 Sep 2026 at 17:00:09
       name:  <unnamed>
        log:  C:\CLAUDE\Projects\Project4\output\dataset_creation.log
   log type:  text
- closed on:  27 Sep 2026, 17:00:09
+ closed on:  27 Sep 2026, 17:07:09
 -------------------------------------------------------------------------------

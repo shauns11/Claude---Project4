@@ -54,6 +54,7 @@ log close
 
 - Log file naming: `Do_File_Name.log` 
 - Save do-files to `code\`, save log files to `output\`
+- Use paths relative to the project root inside do-files (e.g. `use "data/survey_data.dta"`, `export("output/income.txt")`), never absolute `C:/...` paths. Stata resolves them against the directory it is launched from, so always run do-files from `C:\CLAUDE\Projects\Project4` (as the commands above do when invoked there)
 
 ## Git and GitHub
 

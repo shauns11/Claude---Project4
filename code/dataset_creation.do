@@ -35,7 +35,7 @@ replace wealth = -1 if _n==2
 summ income
 svyset [pw=wt_int],psu(psu) strata(strata)
 keep id psu strata wt_int sex age income wealth
-save "C:/CLAUDE/Projects/Project4/data/survey_data.dta", replace
+save "data/survey_data.dta", replace
 
 *display date and time.
 local date `c(current_date)'

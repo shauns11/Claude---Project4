@@ -2,14 +2,14 @@
       name:  <unnamed>
        log:  C:\CLAUDE\Projects\Project4\output\survey_data.log
   log type:  text
- opened on:  27 Sep 2026, 17:00:10
+ opened on:  27 Sep 2026, 17:07:10
 
 . 
 . *==================================================.
 . *analyse the survey dataset in the data folder.
 . *==================================================.
 . 
-. use "C:/CLAUDE/Projects/Project4/data/survey_data.dta", clear
+. use "data/survey_data.dta", clear
 
 . *svyset the data using 3 variables: 
 . *wt_int as the sampling weight.
@@ -59,8 +59,8 @@ Number of PSUs   = 20             Population size = 301.407359
 
 . 
 . **Publish the outputs in table form using the etable command. 
-. etable, cstat(_r_b) cstat(_r_se, nformat(%7.2f)) export("C:/CLAUDE/Projects/P
-> roject4/output/income.txt", replace)
+. etable, cstat(_r_b) cstat(_r_se, nformat(%7.2f)) export("output/income.txt", 
+> replace)
 
 -------------------------------
                          Mean  
@@ -69,8 +69,7 @@ Monthly income         3588.989
                        (193.52)
 Number of observations      198
 -------------------------------
-(collection ETable exported to file
- C:/CLAUDE/Projects/Project4/output/income.txt)
+(collection ETable exported to file output/income.txt)
 
 . 
 . *display date and time.
@@ -80,7 +79,7 @@ Number of observations      198
 
 . display _newline "Run `date' at `time'"
 
-Run 27 Sep 2026 at 17:00:13
+Run 27 Sep 2026 at 17:07:13
 
 . 
 . *close the log file.
@@ -88,5 +87,5 @@ Run 27 Sep 2026 at 17:00:13
       name:  <unnamed>
        log:  C:\CLAUDE\Projects\Project4\output\survey_data.log
   log type:  text
- closed on:  27 Sep 2026, 17:00:13
+ closed on:  27 Sep 2026, 17:07:13
 -------------------------------------------------------------------------------

@@ -4,7 +4,7 @@ log using "output\survey_data.log", replace
 *analyse the survey dataset in the data folder.
 *==================================================.
 
-use "C:/CLAUDE/Projects/Project4/data/survey_data.dta", clear
+use "data/survey_data.dta", clear
 *svyset the data using 3 variables: 
 *wt_int as the sampling weight.
 *psu as the primary sampling unit.
@@ -22,7 +22,7 @@ mvdecode income,mv(-9/-1)
 svy:mean income
 
 **Publish the outputs in table form using the etable command. 
-etable, cstat(_r_b) cstat(_r_se, nformat(%7.2f)) export("C:/CLAUDE/Projects/Project4/output/income.txt", replace)
+etable, cstat(_r_b) cstat(_r_se, nformat(%7.2f)) export("output/income.txt", replace)
 
 *display date and time.
 local date `c(current_date)'
