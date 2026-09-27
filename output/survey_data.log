@@ -1,0 +1,92 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\CLAUDE\Projects\Project4\output\survey_data.log
+  log type:  text
+ opened on:  27 Sep 2026, 17:00:10
+
+. 
+. *==================================================.
+. *analyse the survey dataset in the data folder.
+. *==================================================.
+. 
+. use "C:/CLAUDE/Projects/Project4/data/survey_data.dta", clear
+
+. *svyset the data using 3 variables: 
+. *wt_int as the sampling weight.
+. *psu as the primary sampling unit.
+. *strata as the stratification variable.
+. svyset [pw=wt_int],psu(psu) strata(strata)
+
+Sampling weights: wt_int
+             VCE: linearized
+      Subpop. df: off
+     Single unit: missing
+        Strata 1: strata
+ Sampling unit 1: psu
+           FPC 1: <zero>
+
+. 
+. *income is the outcome variables.
+. summ income
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+      income |        200     3642.22    2409.851         -8   14094.68
+
+. 
+. *treat missing values as missing to exclude from summary statistics.
+. mvdecode income,mv(-9/-1)
+      income: 2 missing values generated
+
+. 
+. *perform survey estimation. 
+. *estimate the mean income accounting for complex survey design.
+. svy:mean income
+(running mean on estimation sample)
+
+Survey: Mean estimation
+
+Number of strata =  5             Number of obs   =        198
+Number of PSUs   = 20             Population size = 301.407359
+                                  Design df       =         15
+
+--------------------------------------------------------------
+             |             Linearized
+             |       Mean   std. err.     [95% conf. interval]
+-------------+------------------------------------------------
+      income |   3588.989     193.52      3176.511    4001.467
+--------------------------------------------------------------
+
+. 
+. **Publish the outputs in table form using the etable command. 
+. etable, cstat(_r_b) cstat(_r_se, nformat(%7.2f)) export("C:/CLAUDE/Projects/P
+> roject4/output/income.txt", replace)
+
+-------------------------------
+                         Mean  
+-------------------------------
+Monthly income         3588.989
+                       (193.52)
+Number of observations      198
+-------------------------------
+(collection ETable exported to file
+ C:/CLAUDE/Projects/Project4/output/income.txt)
+
+. 
+. *display date and time.
+. local date `c(current_date)'
+
+. local time `c(current_time)'
+
+. display _newline "Run `date' at `time'"
+
+Run 27 Sep 2026 at 17:00:13
+
+. 
+. *close the log file.
+. log close
+      name:  <unnamed>
+       log:  C:\CLAUDE\Projects\Project4\output\survey_data.log
+  log type:  text
+ closed on:  27 Sep 2026, 17:00:13
+-------------------------------------------------------------------------------
